@@ -86,3 +86,76 @@ An intelligent travel planning application powered by CrewAI that creates person
 4. **Download** your trip plan for offline reference
 
 ## 🏗️ Project Structure
+
+starter_template/
+├── front_end.py # Streamlit web interface
+├── main.py # Main crew orchestration
+├── agents.py # AI agent definitions
+├── tasks.py # Task definitions
+├── tools/ # Custom tools
+│ ├── calculator_tools.py
+│ └── search_tools.py
+├── .env_example # Environment variables template
+├── .gitignore # Git ignore rules
+└── README.md # This file
+
+
+## 🔧 Configuration
+
+### Environment Variables
+- `OPENAI_API_KEY`: Your OpenAI API key (required)
+
+### Customization
+- Modify `agents.py` to adjust agent roles and behaviors
+- Update `tasks.py` to change task descriptions and outputs
+- Customize `front_end.py` for UI modifications
+
+## 📊 Example Output
+
+The AI generates comprehensive trip plans including:
+
+- **Day-by-day schedules** with morning, afternoon, and evening activities
+- **Restaurant recommendations** with approximate costs
+- **Activity suggestions** tailored to your interests
+- **Transportation options** and costs
+- **Accommodation recommendations**
+- **Budget breakdowns** with total trip costs
+- **Packing suggestions** based on destination and season
+
+## 🛠️ Technical Details
+
+- **Framework**: CrewAI for multi-agent orchestration
+- **Frontend**: Streamlit for web interface
+- **AI Model**: OpenAI GPT models
+- **Language**: Python 3.8+
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🆘 Support
+
+If you encounter any issues:
+
+1. Check that your OpenAI API key is correctly set
+2. Ensure all dependencies are installed
+3. Verify your internet connection for API calls
+4. Check the console for error messages
+
+## 🔗 Related Links
+
+- [CrewAI Documentation](https://docs.crewai.com/)
+- [Streamlit Documentation](https://docs.streamlit.io/)
+- [OpenAI API Documentation](https://platform.openai.com/docs)
+
+---
+
+**Happy Traveling! ✈️🌍**
