@@ -48,7 +48,8 @@ An intelligent travel planning application powered by CrewAI that creates person
 2. **Install dependencies**
     Poetry:
    ```bash
-   poetry install
+   poetry install or poetry shell
+   eval $(poetry env activate)
    ```
 
 3. **Set up environment variables**
@@ -159,3 +160,4 @@ If you encounter any issues:
 ---
 
 **Happy Traveling! ✈️🌍**
+
