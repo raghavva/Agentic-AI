@@ -50,6 +50,7 @@ An intelligent travel planning application powered by CrewAI that creates person
    ```bash
    poetry install or poetry shell
    eval $(poetry env activate)
+   Any changes made to the pyproject.toml, then run poetry lock and poetry install
    ```
 
 3. **Set up environment variables**
