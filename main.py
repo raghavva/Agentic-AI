@@ -3,6 +3,7 @@ from crewai import Crew
 from textwrap import dedent
 from agents import TravelAgents
 from tasks import TravelTasks
+#from tools.flight_tools import FlightTools
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -18,11 +19,14 @@ class TripCrew:
         # Define your custom agents and tasks in agents.py and tasks.py
         agents = TravelAgents()
         tasks = TravelTasks()
+        #flight_tools = FlightTools()
 
         # Define your custom agents and tasks here
         expert_travel_agent = agents.expert_travel_agent()
         city_selection_expert = agents.city_selection_expert()
         local_tour_guide = agents.local_tour_guide()
+        #flight_scraper = agents.flight_scraper_agent()
+        #flight_analyst = agents.flight_analyst_agent()
 
         # Custom tasks include agent name and variables as input
         plan_itinerary = tasks.plan_itinerary(
@@ -47,10 +51,23 @@ class TripCrew:
             self.interests
         )
 
+        # scrape_flights = tasks.scrape_flight_prices_task(
+        #     flight_scraper,
+        #     self.origin,
+        #     self.cities.split(',')[0].strip(),  # Use first city as destination
+        #     self.date_range.split(' to ')[0].strip() if ' to ' in self.date_range else self.date_range,
+        #     self.date_range.split(' to ')[1].strip() if ' to ' in self.date_range else None
+        # )
+
+        # analyze_flights = tasks.analyze_flight_options_task(
+        #     flight_analyst,
+        #     scrape_flights
+        # )
+
         # Define your custom crew here
         crew = Crew(
-            agents=[expert_travel_agent, city_selection_expert, local_tour_guide],
-            tasks=[plan_itinerary, identify_city, gather_city_info],  # Reorder tasks
+            agents=[expert_travel_agent, city_selection_expert, local_tour_guide], #, flight_scraper, flight_analyst],
+            tasks=[plan_itinerary, identify_city, gather_city_info], #, scrape_flights, analyze_flights],  # Reorder tasks
             verbose=True,
         )
 

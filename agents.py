@@ -4,6 +4,7 @@ from langchain.llms import OpenAI, Ollama
 from langchain_openai import ChatOpenAI
 from tools.search_tools import SearchTools
 from tools.calculator_tools import calculate
+#from tools.flight_tools import FlightTools
 
 
 """
@@ -85,3 +86,39 @@ class TravelAgents:
             verbose=True,
             llm=self.OpenAIGPT41Mini,
         )
+
+
+    # def flight_scraper_agent(self):
+    #     return Agent(
+    #         role="Flight Price Scraper",
+    #         backstory=dedent(f"""
+    #         You are an expert web scraper specializing in finding flight prices from multiple sources.
+    #         You have access to advanced scraping tools that can extract real-time flight data
+    #         from airline websites and travel booking platforms.
+    #         """),
+    #         goal=dedent(f"""
+    #         To scrape and collect flight price data from multiple airline websites and booking platforms
+    #         for the given route and dates. Provide comprehensive flight options with accurate pricing.
+    #         """),
+    #         tools=[FlightTools.scrape_flight_prices],
+    #         verbose=True,
+    #         llm=self.OpenAIGPT41Mini,
+    #     )
+
+    # def flight_analyst_agent(self):
+    #     return Agent(
+    #         role="Flight Analyst",
+    #         backstory=dedent(f"""
+    #         You are an expert flight analyst with deep knowledge of airline pricing, routes, and
+    #         travel optimization. You analyze flight data to provide the best recommendations
+    #         based on price, convenience, and value.
+    #         """),
+    #         goal=dedent(f"""
+    #         To analyze scraped flight data and provide detailed recommendations including the cheapest
+    #         options, best value flights, and alternative routes. Consider factors like price, duration,
+    #         stops, and airline reputation.
+    #         """),
+    #         tools=[FlightTools.find_cheapest_flight, calculate],
+    #         verbose=True,
+    #         llm=self.OpenAIGPT41Mini,
+    #     )

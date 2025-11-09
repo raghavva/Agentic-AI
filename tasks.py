@@ -122,3 +122,49 @@ class TravelTasks:
                 ),
                 agent=agent,
             )
+
+    def scrape_flight_prices_task(self, agent, origin, destination, departure_date, return_date=None):
+        return Task(
+        description=dedent(
+            f"""
+            **Task**: Scrape flight prices from the sources
+            **Description**: Use web scraping tools to collect real-time flight price data
+                            from various airline websites and booking platforms for the specified route.
+                            
+                            Scrape data from at least 3 different sources to ensure comprehensive coverage.
+                            Extract detailed information including airline, price, departure/arrival times,
+                            duration, and number of stops.
+                            
+            **Parameters**:
+            - Origin: {origin}
+            - Destination: {destination}
+            - Departure Date: {departure_date}
+            - Return Date: {return_date if return_date else 'One-way trip'}
+
+            **Note**: {self.__tip_section()}
+            """
+        ),
+        agent=agent,
+    )
+
+    def analyze_flight_options_task(self, agent, flight_data):
+        return Task(
+            description=dedent(
+                f"""
+                **Task**: Analyze flight options and provide recommendations
+                **Description**: Analyze the scraped flight data to identify the best options based on:
+                                - Cheapest flights
+                                - Best value (price vs convenience)
+                                - Alternative routes
+                                - Time considerations
+                                
+                                Provide detailed recommendations with reasoning for each option.
+                                
+                **Parameters**:
+                - Flight Data: {flight_data}
+
+                **Note**: {self.__tip_section()}
+                """
+            ),
+            agent=agent,
+        )
