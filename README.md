@@ -300,6 +300,8 @@ Run the application from the command line:
 
 ```bash
 python main.py
+OR
+streamlit run front_end.py
 ```
 
 The CLI will prompt you for:
